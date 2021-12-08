@@ -1,0 +1,29 @@
+<div class="shadow-lg p-0 mb-0 bg-body rounded">
+  <div class="bg-success p-2 text-dark bg-opacity-10">
+    <h1 class="display-4">Bem vindo ao Blog SistemasOn</h1>
+    <p class="lead">Este é um Blog desenvolvido com Node.js + Express + MongoDB.</p>
+    <hr class="my-4">
+    <p>Este site tem o intuito de demostrar algumas das funcionalidades que podem ser usadas em um Blog, com postagens de notícias e informações, separando as mesmas por categorias.</p>
+    <p class="lead">
+      <a class="btn btn-outline-success" href="/usuarios/registro" role="button">Crie uma conta</a><br><br>
+      <!--<a class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>-->
+    </p>
+  </div>
+</div><br>
+<hr>
+<h2>Postagens Recentes:</h2><br>
+
+{{#each postagens}}
+<div class="card mt-2">
+  <div class="card-body">
+    <h3>{{titulo}}</h3>
+    <p>{{descricao}}</p>
+    <a href="/postagem/{{slug}}"><button class="btn btn-outline-success">Leia mais</button></a>
+    <hr>
+    <small>Categoria: {{categoria.nome}}</small><br>
+    <small>Data da publicação: {{data}}</small>
+  </div>
+</div>
+{{else}}
+  <h5>Nenhuma posagem....</h5>
+{{/each}}
